@@ -6,5 +6,6 @@ jobs:
 
     steps:
       - checkout      
-      - run: mvn clean
-      - run: mvn test
+      - run:
+          name: Unit Test
+          command: ./gradlew clean check

@@ -1,0 +1,8 @@
+publish {
+    userOrg = "yusukeiwaki"
+    groupId = "org.nibor.autolink"
+    artifactId = "autolink"
+    publishVersion = "0.7.1_mod"
+    desc = "autolink-java"
+    website = "https://github.com/YusukeIwaki/autolink-java"
+}
