@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    steps:
+      - checkout      
+      - run: mvn clean
+      - run: mvn package
+      - run: mvn release:prepare
+      - run:
+          name: Deploy APK
+          command: |
+            if [ "$CIRCLE_BRANCH" == 'master' ]; then
+              mvn release:perform
+            else
+              echo "no deploy."
+            fi
